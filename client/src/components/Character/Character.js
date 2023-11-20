@@ -11,7 +11,7 @@ function Character(props) {
         // Define a function that contacts the API and retrieves data
         const loadQuotes = async () => {
             try {
-                const response = await axios.get(`http://localhost:8080/api/v1/quotes/character/${props.name}`)
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/quotes/character/${props.name}`)
                 setQuotes(() => [...response.data]);
             }
             catch (error) {
